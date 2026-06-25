@@ -1,0 +1,26 @@
+# Source rulebooks (copyrighted — do not commit)
+*.pdf
+
+# Design handoff archive (already integrated into the app)
+Revisao ArmySmith.zip
+Revisao ArmySmith/
+
+# Reference material (PDF page renders + text extracts) — large, dev-only
+extracted/
+
+# Abandoned React prototype — the shipped app is the single-file HTML
+app-react-archive/
+app/
+
+# Session conversation log — non-shipping
+CONVERSA-HISTORICO.md
+
+# OS / editor / build noise
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+dist/
+
+# Local Claude settings
+.claude/settings.local.json

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 58" width="48" height="58">
+  <!-- Prince Louis "The Lion" — Arms of France: Azure, three fleurs-de-lis Or
+       (12th–14th c. Capetian standard; cleaner reading than semé at small sizes) -->
+  <defs>
+    <!-- Single, clean fleur-de-lis. Designed at 100×120 then placed via <use> -->
+    <symbol id="fleur" viewBox="0 0 100 120" overflow="visible">
+      <!-- Central stem -->
+      <path d="M50,8
+               C46,30 42,46 42,58
+               C42,68 46,76 50,82
+               C54,76 58,68 58,58
+               C58,46 54,30 50,8 Z"
+            fill="#f0c44a"/>
+      <!-- Left petal -->
+      <path d="M50,48
+               C44,52 30,50 22,40
+               C16,32 16,22 22,18
+               C26,16 32,18 36,24
+               C40,30 44,40 50,48 Z"
+            fill="#f0c44a"/>
+      <!-- Right petal (mirror) -->
+      <path d="M50,48
+               C56,52 70,50 78,40
+               C84,32 84,22 78,18
+               C74,16 68,18 64,24
+               C60,30 56,40 50,48 Z"
+            fill="#f0c44a"/>
+      <!-- Horizontal binding band -->
+      <rect x="22" y="58" width="56" height="10" rx="2" fill="#f0c44a"/>
+      <!-- Lower spread (foot of the fleur) -->
+      <path d="M50,68
+               C42,82 32,92 26,108
+               C36,98 42,90 50,86
+               C58,90 64,98 74,108
+               C68,92 58,82 50,68 Z"
+            fill="#f0c44a"/>
+      <!-- Subtle dark outline for definition at small sizes -->
+      <g fill="none" stroke="#7a5610" stroke-width="2.4" stroke-linejoin="round">
+        <path d="M50,8 C46,30 42,46 42,58 C42,68 46,76 50,82 C54,76 58,68 58,58 C58,46 54,30 50,8 Z"/>
+        <path d="M50,48 C44,52 30,50 22,40 C16,32 16,22 22,18 C26,16 32,18 36,24 C40,30 44,40 50,48 Z"/>
+        <path d="M50,48 C56,52 70,50 78,40 C84,32 84,22 78,18 C74,16 68,18 64,24 C60,30 56,40 50,48 Z"/>
+        <rect x="22" y="58" width="56" height="10" rx="2"/>
+        <path d="M50,68 C42,82 32,92 26,108 C36,98 42,90 50,86 C58,90 64,98 74,108 C68,92 58,82 50,68 Z"/>
+      </g>
+    </symbol>
+    <clipPath id="shield-clip">
+      <path d="M4,5 H44 V27 C44,39.5 35,48.5 24,53.5 C13,48.5 4,39.5 4,27 Z"/>
+    </clipPath>
+  </defs>
+  <!-- Shield body (Azure) -->
+  <path d="M4,5 H44 V27 C44,39.5 35,48.5 24,53.5 C13,48.5 4,39.5 4,27 Z"
+        fill="#1e4282"
+        stroke="#241f19" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Three fleurs-de-lis arranged 2-over-1 -->
+  <g clip-path="url(#shield-clip)">
+    <!-- Top-left -->
+    <use href="#fleur" x="7"  y="9"  width="14" height="17"/>
+    <!-- Top-right -->
+    <use href="#fleur" x="27" y="9"  width="14" height="17"/>
+    <!-- Bottom-center -->
+    <use href="#fleur" x="17" y="29" width="14" height="17"/>
+  </g>
+  <!-- Inner edge shadow for depth -->
+  <path d="M4,5 H44 V27 C44,39.5 35,48.5 24,53.5 C13,48.5 4,39.5 4,27 Z"
+        fill="none" stroke="#0e2a55" stroke-width="0.7" stroke-linejoin="round" opacity="0.7"/>
+</svg>
