@@ -7,6 +7,15 @@
 <meta property="og:description" content="Build and print your Feudal European retinue for The Barons' War 2nd Edition.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🏰</text></svg>">
+
+<!-- PWA / iPad install -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#5e3f86">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Barons' War">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -6408,6 +6417,15 @@ function sizeSheetFrame(){
 })();
 
 init();
+</script>
+
+<!-- PWA service worker — only register over http/https (skip on file://) -->
+<script>
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () { /* offline unavailable — fine */ });
+  });
+}
 </script>
 </body>
 </html>

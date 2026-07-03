@@ -1,0 +1,16 @@
+{
+  "name": "Barons' War Builder",
+  "short_name": "Barons' War",
+  "description": "Retinue builder for The Barons' War 2nd Edition — 7 factions, Dramatis Personae, live A4 print preview.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#e8daa2",
+  "theme_color": "#5e3f86",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
