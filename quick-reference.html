@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barons' War — Quick Reference</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>📜</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ═══ Barons' War Quick Reference — Illuminated Angevin ═══
+   Screen: parchment. Print: 2 × A4, black on white.
+   All rules transcribed from The Barons' War 2nd Edition (core QRS pp.147–150
+   + rules chapters) and the King John Sourcebook (advanced rules). */
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+:root{
+  --violet:#5e3f86; --gold:#c19a45; --gold-soft:#a98b54; --oxblood:#8a2027;
+  --ink:#3a2614; --ink-soft:#6a4f30; --card:#f7edd4; --line:#bfa161; --line-soft:#d3bd86;
+}
+body{
+  font-family:'EB Garamond', Georgia, serif; font-size:15px; line-height:1.38;
+  color:var(--ink); background:#d8c6a0;
+  background-image:
+    radial-gradient(ellipse at 50% -10%, #efe4c8 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 120%, #cbb789 0%, transparent 60%);
+  padding:26px 14px 60px;
+}
+.sheet{ max-width:1080px; margin:0 auto 30px; background:var(--card);
+  border:1px solid var(--line); border-radius:6px; padding:26px 30px 30px;
+  box-shadow:0 3px 14px rgba(90,60,20,.25), inset 0 0 0 1px rgba(184,146,63,.25);
+  background-image:
+    radial-gradient(ellipse at 18% -5%, rgba(255,251,238,.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 105%, rgba(150,110,50,.10) 0%, transparent 55%);
+}
+h1{ font-family:'Marcellus',serif; font-size:1.7rem; color:var(--violet);
+  letter-spacing:1px; text-align:center; }
+h1 .accent{ color:var(--oxblood); }
+.subtitle{ text-align:center; font-style:italic; color:var(--ink-soft);
+  font-size:.92rem; margin:2px 0 16px; }
+h2{ font-family:'Marcellus',serif; font-size:.92rem; letter-spacing:2px;
+  text-transform:uppercase; color:var(--violet);
+  border-bottom:1.5px solid var(--line); padding-bottom:3px; margin:0 0 7px; }
+h3{ font-family:'Marcellus',serif; font-size:.8rem; letter-spacing:1px;
+  color:var(--oxblood); margin:7px 0 3px; }
+.cols{ column-count:3; column-gap:22px; column-rule:1px solid var(--line-soft); }
+section{ break-inside:avoid; margin-bottom:15px; }
+p{ margin-bottom:5px; }
+ul,ol{ margin:0 0 6px 17px; }
+li{ margin-bottom:2.5px; }
+table{ width:100%; border-collapse:collapse; margin:4px 0 7px; font-size:.86em; }
+th{ font-family:'Marcellus',serif; font-weight:400; font-size:.78em; letter-spacing:.8px;
+  text-transform:uppercase; color:var(--card); background:var(--violet);
+  padding:2.5px 6px; text-align:left; }
+td{ padding:2.5px 6px; border-bottom:1px solid var(--line-soft); vertical-align:top; }
+tr:last-child td{ border-bottom:1px solid var(--line); }
+td.c, th.c{ text-align:center; }
+b, strong{ font-weight:700; color:#2c1c0c; }
+.kw{ font-family:'Marcellus',serif; font-size:.85em; color:var(--violet); letter-spacing:.3px; }
+.note{ font-style:italic; color:var(--ink-soft); font-size:.88em; }
+.step{ display:flex; gap:7px; margin-bottom:3.5px; }
+.step .n{ flex:0 0 17px; height:17px; border-radius:50%; background:var(--violet);
+  color:var(--card); font-family:'Marcellus',serif; font-size:.72em; text-align:center;
+  line-height:17px; margin-top:1px; }
+.dice-box{ border:1px solid var(--line); border-left:4px solid var(--gold);
+  border-radius:0 4px 4px 0; background:rgba(193,154,69,.10);
+  padding:6px 9px; margin:6px 0; font-size:.92em; }
+.pagefoot{ text-align:center; font-style:italic; color:var(--ink-soft);
+  font-size:.8rem; margin-top:14px; border-top:1px solid var(--line-soft); padding-top:7px; }
+.toolbar{ max-width:1080px; margin:0 auto 14px; display:flex; justify-content:flex-end; gap:8px; }
+.toolbar button, .toolbar a{
+  font-family:'Marcellus',serif; font-size:.78rem; letter-spacing:.6px; cursor:pointer;
+  color:var(--violet); background:linear-gradient(180deg,#f2e7cb,#e6d6ad);
+  border:1px solid var(--line); border-radius:5px; padding:7px 14px; text-decoration:none; }
+.toolbar button:hover, .toolbar a:hover{ border-color:#8a6f3e; color:#4a3163; }
+
+@media print{
+  @page{ size:A4; margin:8mm 9mm; }
+  body{ background:#fff !important; padding:0; font-size:7.5pt; line-height:1.24; color:#000; }
+  .toolbar{ display:none; }
+  .sheet{ max-width:none; margin:0; border:none; border-radius:0; box-shadow:none;
+    padding:0; background:#fff !important; background-image:none !important; }
+  .sheet + .sheet{ page-break-before:always; }
+  h1{ font-size:13pt; color:#000; } h1 .accent{ color:#000; }
+  .subtitle{ font-size:7pt; color:#333; margin-bottom:6pt; }
+  h2{ font-size:7.6pt; color:#000; border-bottom-color:#000; margin-bottom:3pt; }
+  h3{ font-size:7pt; color:#000; }
+  .cols{ column-gap:14px; column-rule-color:#bbb; }
+  section{ margin-bottom:7pt; }
+  table{ font-size:6.8pt; }
+  th{ background:#000 !important; color:#fff !important;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; padding:1.5pt 4pt; }
+  td{ padding:1.5pt 4pt; border-bottom-color:#ccc; }
+  .kw{ color:#000; }
+  .note{ color:#333; }
+  .step .n{ background:#000 !important; color:#fff !important;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .dice-box{ border-color:#000; border-left-color:#000; background:#fff; }
+  .pagefoot{ color:#333; border-top-color:#999; margin-top:6pt; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">← Builder</a>
+  <button onclick="window.print()">🖨 Print (2 × A4)</button>
+</div>
+
+<!-- ═════════════════════ PAGE 1 — TURN & COMBAT ═════════════════════ -->
+<div class="sheet">
+  <h1>Barons' <span class="accent">War</span> — Quick Reference</h1>
+  <div class="subtitle">Page 1 · The Round, Actions &amp; Combat — 2nd Edition</div>
+
+  <div class="cols">
+
+    <section>
+      <h2>Core Dice</h2>
+      <div class="dice-box">
+        Roll <b>d10 ≥ stat</b> to succeed. A natural <b>0 (10)</b> always succeeds;
+        a natural <b>1</b> always fails (and forbids Shield rolls).
+      </div>
+      <ul>
+        <li><b>−1 per Morale Penalty</b> on Morale &amp; Order checks.</li>
+        <li><b>Weary: −1 on all d10 rolls</b> (Attack, Defence, Shield, Morale, Order). Does not affect the Strength-of-Charge d6.</li>
+        <li>Out of Coherency: <b>−1 to Defence rolls</b>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>The Round</h2>
+      <div class="step"><span class="n">1</span><div><b>Initiative:</b> each player rolls d10, −1 per Retinue Leader Morale Penalty. Winner chooses who goes first; ties re-roll. Before rolling, you may spend up to 2 RL Actions for +1d10 each (pick highest).</div></div>
+      <div class="step"><span class="n">2</span><div><b>Activation:</b> players alternate activating Groups. <b>Compulsory Activations first</b> (Broken etc.), then New Activations in any order. You may pass (not in Compulsory); 3 consecutive passes end the phase.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Housekeeping:</b> ① check victory ② collect Action tokens ③ non-Weary Groups remove 1 Morale Penalty ④ Weary Groups: Morale check → pass removes 1 MP ⑤ remove Weary markers ⑥ ensure all Groups ≥1" apart.</div></div>
+    </section>
+
+    <section>
+      <h2>Actions</h2>
+      <table>
+        <tr><th>Action</th><th>Effect</th></tr>
+        <tr><td class="kw">Move</td><td>Up to Movement, any directions, turning freely.</td></tr>
+        <tr><td class="kw">Run</td><td>Double Movement in a straight line; needs LoS to destination. Group becomes <b>Weary</b>.</td></tr>
+        <tr><td class="kw">Combat</td><td>Charge (Melee) or Shoot (Ranged, missile weapons only).</td></tr>
+        <tr><td class="kw">Defend</td><td>Warriors into base contact around Coherency Warrior; remove 1 Morale Penalty; <b>+2 Defence</b> in next Combat.</td></tr>
+        <tr><td class="kw">Command</td><td>Commander orders a friendly Group in Command range + LoS (see p.2).</td></tr>
+        <tr><td class="kw">Special</td><td>Ability / Trait / scenario. Includes <b>Rally</b> for Broken Groups.</td></tr>
+      </table>
+      <p class="note"><b>Max 2 Actions/Reactions per Group per round</b> — Weary on declaring the 2nd. A Command Action counts against the target Group, not the Command Group. Failed Order check: Command Action spent, no Action used.</p>
+    </section>
+
+    <section>
+      <h2>Reactions</h2>
+      <p>Need an available Action (own, Command or bonus). Broken Groups cannot React.</p>
+      <table>
+        <tr><th>vs</th><th>Options</th></tr>
+        <tr><td class="kw">Charge</td><td><b>Attack Back</b> · <b>Defend</b> (+2 Def) · <b>Reaction Shooting</b> (only if attacker ≥ its basic Movement away).</td></tr>
+        <tr><td class="kw">Shoot</td><td><b>Defend</b> (+2 Def; attacker re-checks LoS/range after repositioning) · <b>Shoot Back</b> (if weapon has range).</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Ranged Combat — Shoot</h2>
+      <div class="step"><span class="n">0</span><div><b>Move &amp; Shoot</b> (if weapon allows) — complete the move first.</div></div>
+      <div class="step"><span class="n">1</span><div><b>Declare target</b> — must be closest in range+LoS, else pass a Morale check.</div></div>
+      <div class="step"><span class="n">2</span><div><b>Check LoS</b> — centre of base to centre of base; see through own Group only. Only Warriors with LoS generate Attack dice. If ≥ half draw LoS through Hindering: <b>−1 Attack per instance</b>.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Measure range</b> (edge to edge) — build Short-range and Long-range dice pools. Higher Ground (≥ half): +1 Attack.</div></div>
+      <div class="step"><span class="n">4</span><div><b>Morale check</b> if required — fail ends the combat.</div></div>
+      <div class="step"><span class="n">5</span><div><b>Defender Reaction</b> declared.</div></div>
+      <div class="step"><span class="n">6</span><div><b>Generate pools &amp; Resolve Attacks</b> (see below). Casualties need LoS + range.</div></div>
+    </section>
+
+    <section>
+      <h2>Melee Combat — Charge</h2>
+      <div class="step"><span class="n">1</span><div><b>Declare target</b> — closest within LoS and potential Charge range (<b>Movement + 6"</b>), else Morale check.</div></div>
+      <div class="step"><span class="n">2</span><div><b>Check LoS</b> — straight line; cannot draw through any other Group or LoS-blocking / Impassable terrain.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Measure range</b> — terrain modifies. Check Higher Ground (see p.2).</div></div>
+      <div class="step"><span class="n">4</span><div><b>Morale Melee Modifier</b> — compare Morale Penalties (table below).</div></div>
+      <div class="step"><span class="n">5</span><div><b>Morale check(s)</b> if required — fail ends the combat, no charge move.</div></div>
+      <div class="step"><span class="n">6</span><div><b>Defender Reaction</b> declared.</div></div>
+      <div class="step"><span class="n">7</span><div><b>Strength of the Charge:</b> +d6" to Movement. A <b>6</b> = +1 Attack die; a <b>1</b> = −1 Attack die.</div></div>
+      <div class="step"><span class="n">8</span><div><b>Reaction Shooting</b> resolves now (always Long range; all with LoS shoot; casualties don't fight, count for resolution).</div></div>
+      <div class="step"><span class="n">9</span><div><b>Charge move</b> — straight lines; every Warrior who can reach base contact must; Coherency not required. <b>Failed Charge:</b> nobody reaches → move full distance forward, stop 1" from any Group; combat ends (Reaction wasted).</div></div>
+      <div class="step"><span class="n">10</span><div><b>Attack dice:</b> 1d10 per Warrior in base contact <i>or</i> within 1" of a Group-mate in contact. Commanders: separate pool in contact (+1 die to Group pool if only within 1"). Warriors in contact with an enemy Commander may target him (separate pool, resolved first).</div></div>
+    </section>
+
+    <section>
+      <h2>Morale Melee Modifier</h2>
+      <table>
+        <tr><th>Most MPs</th><th class="c">Diff</th><th>Effect</th></tr>
+        <tr><td rowspan="3" class="kw">Attacker</td><td class="c">4+</td><td>Defender +1 Def die <b>and</b> attacker needs Morale check to Charge</td></tr>
+        <tr><td class="c">2–3</td><td>Defender +1 Defence die</td></tr>
+        <tr><td class="c">1</td><td>Defender re-rolls 1 failed Defence die</td></tr>
+        <tr><td class="kw">Same</td><td class="c">0</td><td>No effect</td></tr>
+        <tr><td rowspan="3" class="kw">Defender</td><td class="c">1</td><td>Attacker re-rolls 1 failed Attack die</td></tr>
+        <tr><td class="c">2–3</td><td>Attacker +1 Attack die</td></tr>
+        <tr><td class="c">4+</td><td>Attacker +2 Attack dice</td></tr>
+      </table>
+      <p class="note">Attack Back uses the same modifier with roles reversed (ignore casualties inflicted since).</p>
+    </section>
+
+    <section>
+      <h2>Resolve Attacks</h2>
+      <div class="step"><span class="n">1</span><div><b>Attack rolls</b> — d10 ≥ Attack stat; weapon/terrain/Weary modify the score. Melee vs Broken: auto-hit.</div></div>
+      <div class="step"><span class="n">2</span><div><b>Defence rolls</b> — 1d10 per hit vs Defence (7+); Armour adds to score; Defend +2; Cover/Def-Position/Higher-Ground bonuses <b>don't stack</b> — pick one.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Shield rolls</b> — failed Defence dice (not natural 1s): Small 9+ · Medium 8+ · Large 7+. Broken Groups can't.</div></div>
+      <div class="step"><span class="n">4</span><div><b>Remove casualties</b> — defender chooses (keep Coherency); Commander pools kill contact Warriors first.</div></div>
+      <div class="step"><span class="n">5</span><div><b>Bonus Attacks</b> resolve immediately.</div></div>
+      <div class="step"><span class="n">6</span><div><b>Attack Back / Shoot Back</b> — roles reversed; slain Warriors don't fight.</div></div>
+    </section>
+
+    <section>
+      <h2>Combat Resolution</h2>
+      <div class="step"><span class="n">1</span><div><b>+1 Morale Penalty per casualty</b> taken (all sources).</div></div>
+      <div class="step"><span class="n">2</span><div><b>Victor</b> = most casualties caused. Tie = draw. Melee with no casualties: attacker Forced Back 1". Melee draw: both Forced Back (attacker first); defender in Cover / Defensive Position is not.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Forced Back</b> — 1" per casualty taken, along the attack line. Blocked by enemy / Building / Impassable / un-crossable Obstacle = <b>Trapped: +1 automatic casualty</b>. Any base leaving the table is removed (whole Group off = destroyed, RL takes a MP).</div></div>
+      <div class="step"><span class="n">4</span><div><b>Regroup</b> (melee only) — winner takes a free Move; not on a draw, not after Defend.</div></div>
+      <div class="step"><span class="n">5</span><div><b>Morale checks</b> — see "When to Test" (p.2). Fail = Broken.</div></div>
+    </section>
+
+  </div>
+  <div class="pagefoot">The Barons' War © Andy Hobday / Warhost / Wargames Atlantic — unofficial fan reference · page 1/2</div>
+</div>
+
+<!-- ═════════════════════ PAGE 2 — TABLES & STATUS ═════════════════════ -->
+<div class="sheet">
+  <h1>Barons' <span class="accent">War</span> — Tables &amp; Reference</h1>
+  <div class="subtitle">Page 2 · Morale, Commanders, Terrain &amp; Wargear — 2nd Edition + King John</div>
+
+  <div class="cols">
+
+    <section>
+      <h2>When to Test Morale</h2>
+      <p><b>To avoid becoming Broken</b> (Combat Resolution):</p>
+      <ul>
+        <li>Lost the Combat <b>and</b> cumulative casualties ≥ half original Warriors.</li>
+        <li>Own Commander killed in the Combat (even if won).</li>
+        <li>Friendly Commander killed within 6".</li>
+        <li>Friendly Group wiped out within 6".</li>
+      </ul>
+      <p><b>At any time:</b> holding 6 Morale Penalties and required to take more; or when an Ability demands it.</p>
+      <p class="note">Groups may use a friendly Commander's Morale if within Command range + LoS — for Morale checks only, never Order checks.</p>
+    </section>
+
+    <section>
+      <h2>Broken · Rally · Weary</h2>
+      <h3>Broken</h3>
+      <ul>
+        <li>Immediately move full Movement away from the cause (or towards own table edge).</li>
+        <li>No Reactions; melee attacks vs them <b>auto-hit</b>; Defence ok, <b>no Shield rolls</b>; no further Morale checks from Combat.</li>
+        <li>Any Warrior off the table = whole Group removed (RL takes a MP).</li>
+      </ul>
+      <h3>Rally (Compulsory)</h3>
+      <ul>
+        <li>Broken Groups must activate first and test Morale. <b>Pass:</b> Weary + take any Action immediately. <b>Fail:</b> Run towards own table edge.</li>
+        <li>Via Command Action (New Activations): Order check, then Morale check; failing the Rally then does nothing (no forced Run).</li>
+      </ul>
+      <h3>Weary</h3>
+      <ul>
+        <li>−1 on all d10 rolls. Causes: Run, a 2nd Action/Reaction, Rallying, some Abilities.</li>
+        <li>Must pass a Morale check in Housekeeping to remove a Morale Penalty. All Weary markers removed at end of Housekeeping.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Commanders</h2>
+      <ul>
+        <li><b>Command range 6"</b> + LoS (Banner 12" / Pennant 9", measured from the bearer). Friendlies draw LoS through the Command Group.</li>
+        <li>Groups in range may use the Commander's <b>Morale</b> (not for Order checks).</li>
+        <li><b>Command Action:</b> target Group passes an Order check (own Morale) → gains a <b>Reaction</b>. From the <b>Retinue Leader</b>: an <b>Action or Reaction</b>. RL may use up to 2 Actions as Command Actions.</li>
+        <li>Max <b>1 Command Action per Group per round</b>; Command Groups can't receive them from another Commander.</li>
+        <li>In Melee, a Commander may spend unused Actions: each = +1 Attack <i>or</i> Defence die.</li>
+        <li><b>Sudden Death:</b> RL slain → another Commander must pass Morale to take over, or the game is lost immediately.</li>
+      </ul>
+      <table>
+        <tr><th>CG Upgrade</th><th class="c">Pts</th><th>Effect</th></tr>
+        <tr><td class="kw">Banner</td><td class="c">9</td><td>Range 12"; Inspire: friendlies within 12" +1 Attack <i>or</i> Defence die per Combat (not the Commander).</td></tr>
+        <tr><td class="kw">Pennant</td><td class="c">7</td><td>As Banner but 9".</td></tr>
+        <tr><td class="kw">Musician</td><td class="c">4</td><td>Order checks in Command range roll 2d10, keep best.</td></tr>
+        <tr><td class="kw">Priest</td><td class="c">4</td><td>Within 6": ignore 1 MP on Morale (not Order) checks. Not extended by Banner.</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Coherency &amp; LoS</h2>
+      <ul>
+        <li>Coherency: all bases wholly/partly within <b>2" (infantry) / 3" (cavalry)</b> of a nominated Warrior. Required after Move/Run — not when Charging.</li>
+        <li>Out of Coherency: −1 Defence + compulsory Move to restore.</li>
+        <li>LoS: centre-to-centre; through own Group only; blocked by any other Group and LoS-blocking terrain.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Terrain</h2>
+      <table>
+        <tr><th>Movement</th><th>Effect</th></tr>
+        <tr><td class="kw">Difficult</td><td>−¼ Movement (Mail: −½ instead).</td></tr>
+        <tr><td class="kw">V. Difficult</td><td>As Difficult; no Run.</td></tr>
+        <tr><td class="kw">Impassable</td><td>No entry.</td></tr>
+        <tr><td class="kw">Obstacles</td><td>Cross: 2" infantry / 1" cavalry. Over 1" tall: blocks LoS, impassable to cavalry.</td></tr>
+      </table>
+      <table>
+        <tr><th>Defence</th><th>Effect</th></tr>
+        <tr><td class="kw">Soft Cover</td><td>+1 Defence rolls.</td></tr>
+        <tr><td class="kw">Hard Cover</td><td>+2 Defence rolls.</td></tr>
+        <tr><td class="kw">Defensive Position</td><td>+2 Defence vs attacks crossing it (≥ half the Group in contact); Obstacle then isn't Hindering.</td></tr>
+      </table>
+      <p class="note">Cover / Defensive Position / Higher Ground / Defend do <b>not stack</b> — choose one. Hindering: −1 Attack per instance (shooting).</p>
+      <h3>Higher Ground (height: 2–3"=1 · 4–6"=2 · 7–9"=3 · 10"+=4)</h3>
+      <ul>
+        <li><b>Shooting:</b> ignore 1 Hindering per Height point; ≥ half higher than target: +1 Attack.</li>
+        <li><b>Melee attacker higher:</b> extra Strength-of-Charge d6 (pick best) and +1 Attack.</li>
+        <li><b>Melee defender higher:</b> +1 Attack and +1 Defence.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Warrior Profiles</h2>
+      <p class="note">Move 6" · Defence 7+ for all. Armour: Padded −1" Mv/+1 Def · Mail −2" Mv/+2 Def. Mounts: Horse +3" Mv · Barded +3"/+1 Def · Pony +2" Mv.</p>
+      <table>
+        <tr><th>XP</th><th class="c">T3 Baron<br>Atk/Mor (3 Act)</th><th class="c">T2 Lord<br>Atk/Mor (2 Act)</th><th class="c">T1 Warrior<br>Atk/Mor (1 Act)</th></tr>
+        <tr><td class="kw">Veteran</td><td class="c">4+ / 2+</td><td class="c">4+ / 2+</td><td class="c">5+ / 3+</td></tr>
+        <tr><td class="kw">Regular</td><td class="c">5+ / 3+</td><td class="c">5+ / 3+</td><td class="c">6+ / 4+</td></tr>
+        <tr><td class="kw">Irregular</td><td class="c">6+ / 4+</td><td class="c">6+ / 4+</td><td class="c">7+ / 5+</td></tr>
+        <tr><td class="kw">Green</td><td class="c">7+ / 5+</td><td class="c">7+ / 5+</td><td class="c">8+ / 6+</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Melee Weapons</h2>
+      <table>
+        <tr><th>Weapon</th><th class="c">Mod</th><th>Rules</th></tr>
+        <tr><td class="kw">Hand Weapon</td><td class="c">—</td><td>—</td></tr>
+        <tr><td class="kw">Battle Axe</td><td class="c">—</td><td>Cutting Edge: Shield rolls −1.</td></tr>
+        <tr><td class="kw">Improvised 2H</td><td class="c">+1</td><td>Slow · 2H (no shield).</td></tr>
+        <tr><td class="kw">Spear</td><td class="c">—</td><td>Reach: fight from 2".</td></tr>
+        <tr><td class="kw">Cavalry Spear</td><td class="c">—</td><td>+1 Attack when Charging (mounted).</td></tr>
+        <tr><td class="kw">Dual Daggers</td><td class="c">+1</td><td>Critical Hit (nat 0 only blocked by nat 0) · 2H.</td></tr>
+        <tr><td class="kw">Falchion</td><td class="c">+1</td><td>Slashing: −1 Def if unarmoured/Padded.</td></tr>
+        <tr><td class="kw">Sword</td><td class="c">+1</td><td>Parry: +1 Shield roll (9+ if no shield).</td></tr>
+        <tr><td class="kw">Mace</td><td class="c">+1</td><td>Blunt Trauma: no Shield rolls.</td></tr>
+        <tr><td class="kw">Bill / Polearm</td><td class="c">+1</td><td>Hacking: −1 Def · Reach · 2H.</td></tr>
+        <tr><td class="kw">Dane Axe</td><td class="c">+2</td><td>Slow · Cutting Edge · 2H.</td></tr>
+        <tr><td class="kw">Horseman's Pick</td><td class="c">+1</td><td>Mounted · Piercing on Charge (ignore Armour).</td></tr>
+        <tr><td class="kw">Two-Handed Wpn</td><td class="c">+2</td><td>Parry · Slow · 2H.</td></tr>
+        <tr><td class="kw">Lance</td><td class="c">+2</td><td>1st Charge only · Piercing · Shock (Morale check or Broken).</td></tr>
+        <tr><td class="kw">Goedendag</td><td class="c">—</td><td>Spike: −1 Defence. (Flemish)</td></tr>
+      </table>
+      <p class="note">Ranged-armed Warriors fight melee as Hand Weapon.</p>
+    </section>
+
+    <section>
+      <h2>Missile Weapons</h2>
+      <table>
+        <tr><th>Weapon</th><th class="c">Range</th><th>Rules</th></tr>
+        <tr><td class="kw">Sling</td><td class="c">10"</td><td>Move 6" &amp; shoot · Quick Shot: hits give bonus Attacks if stationary.</td></tr>
+        <tr><td class="kw">Javelin</td><td class="c">6"</td><td>Move 6" &amp; shoot · Run Up: +d6" if ending closer.</td></tr>
+        <tr><td class="kw">Bow</td><td class="c">20"/10"</td><td>−1 at Long · Move 3" &amp; shoot at Short · 2H.</td></tr>
+        <tr><td class="kw">Crossbow</td><td class="c">20"/10"</td><td>+1 at Short · Critical Hit at Short · Reload (1 shot/round, no Shoot Back/Reaction Shooting) · Move 3" · 2H.</td></tr>
+        <tr><td class="kw">Elm Bow</td><td class="c">16"/8"</td><td>Bodkin: −1 Def at Short · Move 3" · 2H. (Welsh)</td></tr>
+      </table>
+      <p class="note">Shields: Small 9+ · Medium 8+ · Large 7+ (roll per failed Defence die, except natural 1s).</p>
+    </section>
+
+    <section>
+      <h2>King John — Advanced</h2>
+      <h3>Chivalry &amp; Prisoners</h3>
+      <p>When a Chivalry Warrior is slain in Melee by another Chivalry Warrior/Group: d10 — <b>1–2 killed, 3+ taken prisoner</b> (worth <b>double VP</b>). Chivalry Groups may always Charge enemy knights even if not closest.</p>
+      <h3>Optional: Ranged Cap</h3>
+      <p>Max <b>⅓ of the Retinue's points</b> on ranged-armed Groups (Weapon Choice doesn't count).</p>
+      <h3>Allied vs Combined Retinues</h3>
+      <ul>
+        <li><b>Allied:</b> no shared Morale / Command Actions / CG upgrades across retinues; Coherency 15" to own RL.</li>
+        <li><b>Combined:</b> share all Commander benefits; Coherency 15" to any RL.</li>
+        <li><b>Liege Lord</b> rolls Initiative for the force. Mercenary RL is never Liege Lord; Outlaw retinues are Allied-only.</li>
+      </ul>
+    </section>
+
+  </div>
+  <div class="pagefoot">The Barons' War © Andy Hobday / Warhost / Wargames Atlantic — unofficial fan reference · page 2/2</div>
+</div>
+
+</body>
+</html>
