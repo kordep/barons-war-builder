@@ -130,7 +130,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
     <section>
       <h2>The Round</h2>
       <div class="step"><span class="n">1</span><div><b>Initiative:</b> each player rolls d10, −1 per Retinue Leader Morale Penalty. Winner chooses who goes first; ties re-roll. Before rolling, you may spend up to 2 RL Actions for +1d10 each (pick highest).</div></div>
-      <div class="step"><span class="n">2</span><div><b>Activation:</b> players alternate activating Groups. <b>Compulsory Activations first</b> (Broken etc.), then New Activations in any order. You may pass (not in Compulsory); 3 consecutive passes end the phase.</div></div>
+      <div class="step"><span class="n">2</span><div><b>Activation:</b> players alternate activating Groups. <b>Compulsory Activations first</b> — Broken Groups, plus any Group an Ability subjects to Compulsory Activation (e.g. King John's <i>Fear of Treachery</i>). Then New Activations in any order. You may pass (not in Compulsory); 3 consecutive passes end the phase.</div></div>
       <div class="step"><span class="n">3</span><div><b>Housekeeping:</b> ① check victory ② collect Action tokens ③ non-Weary Groups remove 1 Morale Penalty ④ Weary Groups: Morale check → pass removes 1 MP ⑤ remove Weary markers ⑥ ensure all Groups ≥1" apart.</div></div>
     </section>
 
@@ -143,7 +143,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
         <tr><td class="kw">Combat</td><td>Charge (Melee) or Shoot (Ranged, missile weapons only).</td></tr>
         <tr><td class="kw">Defend</td><td>Warriors into base contact around Coherency Warrior; remove 1 Morale Penalty; <b>+2 Defence</b> in next Combat.</td></tr>
         <tr><td class="kw">Command</td><td>Commander orders a friendly Group in Command range + LoS (see p.2).</td></tr>
-        <tr><td class="kw">Special</td><td>Ability / Trait / scenario. Includes <b>Rally</b> for Broken Groups.</td></tr>
+        <tr><td class="kw">Special</td><td><b>Rally</b> (Broken Groups), or an Action required / granted by a specific Ability, Trait or scenario rule.</td></tr>
       </table>
       <p class="note"><b>Max 2 Actions/Reactions per Group per round</b> — Weary on declaring the 2nd. A Command Action counts against the target Group, not the Command Group. Failed Order check: Command Action spent, no Action used.</p>
     </section>
@@ -156,6 +156,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
         <tr><td class="kw">Charge</td><td><b>Attack Back</b> · <b>Defend</b> (+2 Def) · <b>Reaction Shooting</b> (only if attacker ≥ its basic Movement away).</td></tr>
         <tr><td class="kw">Shoot</td><td><b>Defend</b> (+2 Def; attacker re-checks LoS/range after repositioning) · <b>Shoot Back</b> (if weapon has range).</td></tr>
       </table>
+      <p class="note">Ability-granted Combat Reactions: <b>Brace</b> (Spear/Bill infantry vs a mounted Charge), <b>Counter Charge</b> (cavalry vs a cavalry Charge), <b>Evade</b> (Gascon Horsemen, KJ).</p>
     </section>
 
     <section>
@@ -212,7 +213,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
       <h2>Combat Resolution</h2>
       <div class="step"><span class="n">1</span><div><b>+1 Morale Penalty per casualty</b> taken (all sources).</div></div>
       <div class="step"><span class="n">2</span><div><b>Victor</b> = most casualties caused. Tie = draw. Melee with no casualties: attacker Forced Back 1". Melee draw: both Forced Back (attacker first); defender in Cover / Defensive Position is not.</div></div>
-      <div class="step"><span class="n">3</span><div><b>Forced Back</b> — 1" per casualty taken, along the attack line. Blocked by enemy / Building / Impassable / un-crossable Obstacle = <b>Trapped: +1 automatic casualty</b>. Any base leaving the table is removed (whole Group off = destroyed, RL takes a MP).</div></div>
+      <div class="step"><span class="n">3</span><div><b>Forced Back</b> — 1" per casualty taken, along the attack line. Blocked by enemy / Building / Impassable / un-crossable Obstacle / a vertical drop (unless the Group chooses to Fall) = <b>Trapped: +1 automatic casualty</b>. Any base leaving the table is removed (whole Group off = destroyed, RL takes a MP).</div></div>
       <div class="step"><span class="n">4</span><div><b>Regroup</b> (melee only) — winner takes a free Move; not on a draw, not after Defend.</div></div>
       <div class="step"><span class="n">5</span><div><b>Morale checks</b> — see "When to Test" (p.2). Fail = Broken.</div></div>
     </section>
@@ -237,7 +238,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
         <li>Friendly Commander killed within 6".</li>
         <li>Friendly Group wiped out within 6".</li>
       </ul>
-      <p><b>At any time:</b> holding 6 Morale Penalties and required to take more; or when an Ability demands it.</p>
+      <p><b>At any time:</b> holding 6 Morale Penalties and required to take more; or when an Ability / weapon demands it (e.g. <i>Fear</i> — to Charge that Group; <i>Close Ranks</i> — the targeted infantry; a Lance's <i>Shock</i> — on taking casualties; over-riding a Compulsory Action).</p>
       <p class="note">Groups may use a friendly Commander's Morale if within Command range + LoS — for Morale checks only, never Order checks.</p>
     </section>
 
@@ -245,7 +246,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
       <h2>Broken · Rally · Weary</h2>
       <h3>Broken</h3>
       <ul>
-        <li>Immediately move full Movement away from the cause (or towards own table edge).</li>
+        <li>Immediately move full Movement away from the cause (or towards own table edge). Inside a Building: not moved — they hide.</li>
         <li>No Reactions; melee attacks vs them <b>auto-hit</b>; Defence ok, <b>no Shield rolls</b>; no further Morale checks from Combat.</li>
         <li>Any Warrior off the table = whole Group removed (RL takes a MP).</li>
       </ul>
@@ -256,7 +257,7 @@ b, strong{ font-weight:700; color:#2c1c0c; }
       </ul>
       <h3>Weary</h3>
       <ul>
-        <li>−1 on all d10 rolls. Causes: Run, a 2nd Action/Reaction, Rallying, some Abilities.</li>
+        <li>−1 on all d10 rolls. Causes: <b>Run</b> · declaring a <b>2nd Action/Reaction</b> · <b>Rallying</b> · Abilities whose free attacks state it (<i>Attack Back</i>, <i>Born for War</i>, <i>Ride Down</i>).</li>
         <li>Must pass a Morale check in Housekeeping to remove a Morale Penalty. All Weary markers removed at end of Housekeeping.</li>
       </ul>
     </section>
@@ -292,11 +293,13 @@ b, strong{ font-weight:700; color:#2c1c0c; }
     <section>
       <h2>Terrain</h2>
       <table>
-        <tr><th>Movement</th><th>Effect</th></tr>
+        <tr><th>Type / Movement</th><th>Effect</th></tr>
+        <tr><td class="kw">Area Terrain</td><td>A Group is "in" it when ≥ half its bases are wholly inside.</td></tr>
+        <tr><td class="kw">Buildings</td><td>Area Terrain; doors/windows are Defensive Positions when in base contact; no Run inside.</td></tr>
         <tr><td class="kw">Difficult</td><td>−¼ Movement (Mail: −½ instead).</td></tr>
         <tr><td class="kw">V. Difficult</td><td>As Difficult; no Run.</td></tr>
         <tr><td class="kw">Impassable</td><td>No entry.</td></tr>
-        <tr><td class="kw">Obstacles</td><td>Cross: 2" infantry / 1" cavalry. Over 1" tall: blocks LoS, impassable to cavalry.</td></tr>
+        <tr><td class="kw">Obstacles</td><td>Cross: 2" infantry / 1" cavalry. Over 1" tall: blocks LoS; Impassable to cavalry; infantry cross only by Climbing / Ladders.</td></tr>
       </table>
       <table>
         <tr><th>Defence</th><th>Effect</th></tr>

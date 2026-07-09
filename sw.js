@@ -2,7 +2,7 @@
  * Cache-first for the app shell; passthrough for cross-origin (Google Fonts).
  * Bump CACHE when publishing a new version so devices download the update. */
 
-const CACHE = 'bw-builder-v2';
+const CACHE = 'bw-builder-v3';
 
 const SHELL = [
   './',
